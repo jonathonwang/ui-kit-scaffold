@@ -15,10 +15,10 @@ gulp.Copy('copy', [
 gulp.Sass('scss', `${config.paths.src.scss}/**/*.scss`, config.paths.dist.css, 'app.css');
 
 // Compile TS
-gulp.Browserify('browserify', `${config.paths.src.ts}/app.ts`, config.paths.dist.js, 'app.js', ['babelify'], ['tsify']);
+gulp.Browserify('browserify', `${config.paths.src.js}/app.js`, config.paths.dist.js, 'app.js', ['babelify']);
 
 // Lint TypeScript
-gulp.Tslint('tslint', `${config.paths.src.js}/**/*.ts`, `${config.paths.src.js}/vendor/**/*`, 'tslint.json');
+gulp.Eslint('eslint', `${config.paths.src.js}/**/*.js`, `${config.paths.src.js}/vendor/**/*`, '.eslintrc');
 
 // Lint Scss
 gulp.Scsslint('scsslint', `${config.paths.src.sass}/**/*.scss`, `${config.paths.src.sass}/vendor/**/*.scss`, '.scss-lint.yml');
@@ -31,7 +31,7 @@ gulp.Default(['copy', 'scsslint', 'scss', 'tslint', 'browserify']);
 
 // Watch Task
 gulp.Watch(['copy'], [
-  { path: `${config.paths.src.js}/**/*.{ts,js,vue}`, tasks: ['tslint', 'browserify'] },
+  { path: `${config.paths.src.js}/**/*.js`, tasks: ['eslint', 'browserify'] },
   { path: `${config.paths.src.scss}/**/*.scss`, tasks: ['scsslint', 'scss'] },
   { path: `${config.paths.src.html}/**/*.html`, tasks: ['html'] }
 ]);

@@ -1,10 +1,10 @@
 {
-  "name": "Gulp-Starter",
+  "name": "UI Kit Scaffold",
   "icon": "",
 
   "paths": {
     "src" : {
-      "ts": "./src/ts",
+      "js": "./src/js",
       "scss": "./src/scss",
       "html": "./src/html"
     },

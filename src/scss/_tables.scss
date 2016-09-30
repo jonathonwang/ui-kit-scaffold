@@ -5,6 +5,7 @@
   width: 100%;
   max-width: 100%;
   margin-bottom: modular-scale(1);
+  border-collapse: collapse;
   border-radius: $border-radius;
 }
 
@@ -31,14 +32,14 @@
 
 .table--striped {
   tbody tr:nth-of-type(odd) {
-    background-color: lighten(#000, .5);
+    background-color: lighten($secondary, 30%);
   }
 }
 
 .table--hover {
   tbody tr {
     &:hover {
-      background-color: lighten(#000, .6);
+      background-color: lighten($secondary, 50%);
     }
   }
 }

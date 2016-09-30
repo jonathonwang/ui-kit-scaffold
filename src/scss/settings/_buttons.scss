@@ -1,0 +1,36 @@
+// ===================================
+// Button Settings
+$button-padding-base-vertical: 7px;
+$button-padding-base-horizontal: 15px;
+$buttons: (
+  primary: (
+    background-color: $primary,
+    color: $white
+  ),
+  secondary: (
+    background-color: $secondary,
+    color: $white
+  ),
+  tertiary: (
+    background-color: $tertiary,
+    color: $white
+  )
+);
+// Sizing
+// optionally, pass in padding: 7px 15px foreach size
+// otherwise fallback to $button-padding-base-vertical && $button-padding-base-horizontal
+// And uses modular scale to scale up
+$button-sizes: (
+  xs: (
+    modular-scale: -1
+  ),
+  sm: (
+    modular-scale: 0
+  ),
+  md: (
+    modular-scale: 1
+  ),
+  lg: (
+    modular-scale: 2
+  )
+);

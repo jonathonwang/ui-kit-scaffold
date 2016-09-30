@@ -783,7 +783,7 @@ ul {
 ul, ol {
   line-height: 1.6; }
 
-.list--unstyled {
+.list--unstyled, .dropdown__list {
   padding-left: 0;
   list-style: none; }
 
@@ -824,6 +824,7 @@ ul, ol {
   width: 100%;
   max-width: 100%;
   margin-bottom: 1.414rem;
+  border-collapse: collapse;
   border-radius: 3px; }
 
 .table--bordered th, .table--bordered td {
@@ -839,16 +840,191 @@ ul, ol {
   padding: 5px 10px; }
 
 .table--striped tbody tr:nth-of-type(odd) {
-  background-color: #010101; }
+  background-color: #b3b3b3; }
 
 .table--hover tbody tr:hover {
-  background-color: #020202; }
+  background-color: #e6e6e6; }
 
 .table--responsive {
   display: block;
   width: 100%;
   min-height: 1px;
   overflow-x: auto; }
+
+.btn {
+  display: inline-block;
+  padding: 7px 15px;
+  font-size: 1rem;
+  text-align: center;
+  background-color: #ddd;
+  border: 0 solid transparent;
+  border-radius: 3px; }
+  .btn:focus {
+    outline: none; }
+  .btn:hover {
+    background-color: #d5d5d5; }
+
+.btn--pill {
+  border-radius: 200px; }
+
+.btn--xs {
+  padding: 9.898px 21.21px;
+  font-size: 0.70721rem; }
+
+.btn--sm {
+  padding: 9.898px 21.21px;
+  font-size: 1rem; }
+
+.btn--md {
+  padding: 9.898px 21.21px;
+  font-size: 1.414rem; }
+
+.btn--lg {
+  padding: 9.898px 21.21px;
+  font-size: 1.9994rem; }
+
+.btn--primary {
+  color: #fff;
+  background-color: #333; }
+  .btn--primary:hover {
+    background-color: #0d0d0d; }
+
+.btn--secondary {
+  color: #fff;
+  background-color: #666; }
+  .btn--secondary:hover {
+    background-color: #404040; }
+
+.btn--tertiary {
+  color: #fff;
+  background-color: #eee; }
+  .btn--tertiary:hover {
+    background-color: #c8c8c8; }
+
+.btn--outline {
+  background-color: transparent; }
+  .btn--outline.btn--primary {
+    color: #333;
+    border: 2px solid #333; }
+    .btn--outline.btn--primary:hover {
+      color: #fff;
+      background-color: #333;
+      border: 2px solid #333; }
+  .btn--outline.btn--secondary {
+    color: #666;
+    border: 2px solid #666; }
+    .btn--outline.btn--secondary:hover {
+      color: #fff;
+      background-color: #666;
+      border: 2px solid #666; }
+  .btn--outline.btn--tertiary {
+    color: #eee;
+    border: 2px solid #eee; }
+    .btn--outline.btn--tertiary:hover {
+      color: #fff;
+      background-color: #eee;
+      border: 2px solid #eee; }
+
+.dropdown {
+  position: relative; }
+
+.dropdown__list {
+  position: absolute;
+  left: 0;
+  z-index: -10;
+  overflow: visible;
+  visibility: hidden;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  opacity: 0;
+  transition: .5s ease opacity;
+  transform: translate(0, 8px); }
+  .dropdown__list.dropdown__list--open {
+    z-index: 10;
+    visibility: visible;
+    opacity: 1; }
+  .dropdown__list:before {
+    position: absolute;
+    top: -6px;
+    left: calc(50% - (15px/2));
+    z-index: 10;
+    width: 0;
+    height: 0;
+    content: ' ';
+    border-color: transparent transparent #fff;
+    border-style: solid;
+    border-width: 0 7.5px 6px; }
+  .dropdown__list:after {
+    position: absolute;
+    top: -7px;
+    left: calc(50% - (15px/2));
+    z-index: 9;
+    width: 0;
+    height: 0;
+    content: ' ';
+    border-color: transparent transparent #ccc;
+    border-style: solid;
+    border-width: 0 7.5px 6px; }
+
+.dropdown__item {
+  font-size: 1rem;
+  white-space: nowrap; }
+  .dropdown__item:not(:last-of-type) {
+    border-bottom: 1px solid #ccc; }
+  .dropdown__item a {
+    display: block;
+    padding: 5px 10px;
+    color: #000;
+    text-decoration: none; }
+  .dropdown__item:hover {
+    background-color: #e6e6e6; }
+
+label {
+  display: block;
+  margin-bottom: .5rem;
+  font-family: "Helvetica Neue", "Helvetica", "arial", sans-serif;
+  font-size: 1rem;
+  font-weight: bold; }
+
+.label--required::after {
+  margin-left: 2px;
+  color: #333;
+  content: '*'; }
+
+select,
+textarea,
+input[type="text"],
+input[type="email"],
+input[type="search"],
+input[type="password"] {
+  display: block;
+  width: 100%;
+  padding: 8px 15px;
+  font-size: 1rem;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  outline: 0; }
+
+select,
+input[type="text"],
+input[type="email"],
+input[type="search"],
+input[type="submit"],
+input[type="password"] {
+  height: 40px; }
+
+textarea {
+  resize: vertical; }
+
+.form__group {
+  margin-bottom: 0.70721rem; }
+
+.input--inline {
+  display: inline-block; }
+  .input--inline + .input--inline {
+    margin-left: 0.70721rem; }
 
 code,
 pre {
