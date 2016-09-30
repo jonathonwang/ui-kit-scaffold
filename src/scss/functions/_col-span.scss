@@ -1,0 +1,10 @@
+//=====================================
+// Span Width Function
+
+@function col-span($number) {
+  @if $number <= $grid-columns {
+    @return ($number / $grid-columns) * 100%;
+  } @else {
+    @warn 'Number passed into span() shouldnt be greater than $columns';
+  }
+}

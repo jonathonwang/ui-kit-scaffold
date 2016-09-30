@@ -1,0 +1,6 @@
+// ====================================
+// Modular Scale function
+
+@function modular-scale($increment, $font-unit: $font-unit-value, $value: $base-font-size, $ratio: $modular-scale-ratio) {
+  @return math-pow($ratio, $increment) + $font-unit;
+}

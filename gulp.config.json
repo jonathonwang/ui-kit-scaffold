@@ -1,0 +1,21 @@
+{
+  "name": "Gulp-Starter",
+  "icon": "",
+
+  "paths": {
+    "src" : {
+      "ts": "./src/ts",
+      "scss": "./src/scss",
+      "html": "./src/html"
+    },
+    "dist": {
+      "js": "./dist/js",
+      "css": "./dist/css",
+      "html": "./dist/html",
+      "fonts": "./dist/fonts"
+    },
+    "vendor": {
+      "normalize": "./node_modules/normalize-scss/sass"
+    }
+  }
+}

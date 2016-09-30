@@ -1,0 +1,70 @@
+// ====================================
+// Colors Settings
+$primary: #333;
+$secondary: #666;
+$tertiary: #fdf;
+
+// ====================================
+// Grid Settings
+$grid-breakpoints: (
+  xs: 0,
+  sm: 544px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+
+$container-max-widths: (
+  sm: 576px,
+  md: 720px,
+  lg: 940px,
+  xl: 1140px
+) !default;
+
+$grid-columns: 12;
+$grid-gutter-width: 30px; // ~30px
+
+// ====================================
+// Typography Settings
+// Headers
+// Optionally pass in specific weights foreach header - otherwise fallsback to $headers-weight
+$headers: (
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6
+);
+
+$font-weights: (
+  black: 700,
+  bold: 500,
+  medium: 400,
+  regular: 300,
+  light: 200,
+  thin: 100
+);
+
+// Modular Scale Settings
+$base-font-size: 15px;
+$font-unit-value: rem;
+$modular-scale-ratio: 1.414;
+
+// Headers
+$headers-font: 'Helvetica Neue', 'Helvetica', 'arial', sans-serif;
+$headers-weight: map-get($font-weights, medium);
+$headers-color: $primary;
+
+// Paragaphs
+$paragraphs-font: 'Helvetica Neue', 'Helvetica', 'arial', sans-serif;
+$paragraphs-weight: map-get($font-weights, regular);
+$paragraphs-color: $secondary;
+
+//Code
+$code-font: 'Menlo', 'Monaco', 'Consolas', 'Courier New', monospace;
+
+
+// ====================================
+// Miscellaneous
+$border-radius: 3px;

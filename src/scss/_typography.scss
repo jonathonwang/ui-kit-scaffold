@@ -1,0 +1,82 @@
+// ====================================
+// Set Base Font Size & Family
+:root {
+  @include font-smoothing;
+  font-family: $paragraphs-font;
+  font-size: $base-font-size;
+}
+// ====================================
+// Modular Scale Loop
+@each $header, $weight in $headers {
+  $i: index(reverse($headers), $header);
+  #{$header},
+  .#{$header} {
+    margin-bottom: modular-scale(-1);
+    font-family: $headers-font;
+    font-size: modular-scale($i);
+    @if $weight != null {
+      font-weight: $weight;
+    } @else {
+      font-weight: $headers-weight;
+    }
+    line-height: 1;
+    color: $headers-color;
+  }
+}
+// ====================================
+// Non-headers
+p {
+  font-size: 1 + $font-unit-value;
+  color: lighten($paragraphs-color, .1);
+}
+small {
+  font-size: modular-scale(-1, em);
+  color: lighten($paragraphs-color, .1);
+}
+.milli {
+  font-size: modular-scale(-1);
+  color: lighten($paragraphs-color, .1);
+}
+.micro {
+  font-size: modular-scale(-2);
+  color: lighten($paragraphs-color, .1);
+}
+a {
+  cursor: pointer;
+}
+blockquote {
+  padding: 10px $grid-gutter-width;
+  margin: 0;
+  font-size: 20px;
+  font-style: italic;
+  color: #666;
+  border-left: 1px solid #000;
+}
+hr {
+  margin-bottom: modular-scale(1);
+  border: 0 none;
+  border-top: 1px solid rgba(#4a4a4a, .4);
+}
+
+// ====================================
+// Typography Helpers
+@each $weight, $value in $font-weights {
+  .text--#{$weight} {
+    font-weight: #{$value};
+  }
+}
+$text-alignment: (
+  left,
+  right,
+  center,
+);
+@each $alignment in $text-alignment {
+  .text--#{$alignment} {
+    text-align: $alignment;
+  }
+}
+.text--header {
+  padding-bottom: modular-scale(-2);
+  margin-bottom: modular-scale(2);
+  border-bottom: 1px solid lighten($secondary, .4);
+}
