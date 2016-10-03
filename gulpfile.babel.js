@@ -7,9 +7,6 @@ import config from './gulp.config.json';
 
 // Copy Folders / Files
 gulp.Copy('copy', [
-  // { src: `${config.paths.vendor.fontawesome.fonts}/**/*`, dest: `${config.paths.dist.fonts}` },
-  // { src: `${config.paths.vendor.fontawesome.fonts}/**/*`, dest: `${config.paths.src.scss}/vendor/font-awesome/fonts` },
-  // { src: `${config.paths.vendor.fontawesome.scss}/**/*`, dest: `${config.paths.src.scss}/vendor/font-awesome/scss` },
   { src: `${config.paths.vendor.normalize}/**/*`, dest: `${config.paths.src.scss}/vendor/normalize` }
 ]);
 
