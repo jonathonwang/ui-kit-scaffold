@@ -856,7 +856,7 @@ ul, ol {
 
 .btn {
   display: inline-block;
-  padding: 7px 15px;
+  padding: 0.70721rem 1.414rem;
   font-size: 1rem;
   text-align: center;
   text-decoration: none;
@@ -871,19 +871,19 @@ ul, ol {
   border-radius: 200px; }
 
 .btn--xs {
-  padding: 9.898px 21.21px;
+  padding: 0.70721rem 1.414rem;
   font-size: 0.70721rem; }
 
 .btn--sm {
-  padding: 9.898px 21.21px;
+  padding: 0.70721rem 1.414rem;
   font-size: 1rem; }
 
 .btn--md {
-  padding: 9.898px 21.21px;
+  padding: 0.70721rem 1.414rem;
   font-size: 1.414rem; }
 
 .btn--lg {
-  padding: 9.898px 21.21px;
+  padding: 0.70721rem 1.414rem;
   font-size: 1.9994rem; }
 
 .btn--primary {

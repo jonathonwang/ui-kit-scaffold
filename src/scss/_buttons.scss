@@ -2,7 +2,7 @@
 // Button Styles
 %btn {
   display: inline-block;
-  padding: $button-padding-base-vertical $button-padding-base-horizontal;
+  padding: modular-scale(-1) modular-scale(1);
   font-size: 1rem;
   text-align: center;
   text-decoration: none;
@@ -25,12 +25,12 @@
   border-radius: 200px;
 }
 
-// Button Sizing
+// Button Sizing Modifiers
 @each $size, $styles in $button-sizes {
   $i: index($button-sizes, $size);
   .btn--#{$size} {
     @if map-get($styles, padding) == null {
-      padding: ($button-padding-base-vertical * $modular-scale-ratio) ($button-padding-base-horizontal * $modular-scale-ratio);
+      padding: modular-scale(-1) modular-scale(1);
     } @else {
       padding: map-get($styles, padding);
     }
@@ -38,7 +38,7 @@
   }
 }
 
-// Main Button Colors
+// Main Button Color Modifiers
 @each $button, $styles in $buttons {
   .btn--#{$button} {
     color: map-get($styles, color);
@@ -49,7 +49,7 @@
   }
 }
 
-// Outline Button Colors
+// Outline Button Color Modifiers
 .btn--outline {
   background-color: transparent;
   @each $button, $styles in $buttons {
