@@ -777,6 +777,9 @@ hr {
   margin-bottom: 1.9994rem;
   border-bottom: 1px solid #676767; }
 
+.text--marginless {
+  margin: 0; }
+
 ul {
   list-style-type: square; }
 
@@ -856,6 +859,8 @@ ul, ol {
   padding: 7px 15px;
   font-size: 1rem;
   text-align: center;
+  text-decoration: none;
+  cursor: pointer;
   background-color: #ddd;
   border: 0 solid transparent;
   border-radius: 3px; }
@@ -979,6 +984,50 @@ ul, ol {
     text-decoration: none; }
   .dropdown__item:hover {
     background-color: #e6e6e6; }
+
+.modal__outer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  visibility: hidden;
+  opacity: 0;
+  transition: .5s ease all; }
+  .modal__outer.modal--open {
+    visibility: visible;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 1; }
+
+.modal--open .modal__wrapper {
+  transform: translate(0, 50px); }
+
+.modal__wrapper {
+  z-index: 50;
+  max-width: 800px;
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: #fff;
+  border-radius: 3px;
+  transition: .5s ease all;
+  transform: translate(0, -100px); }
+  .modal__wrapper .modal__header {
+    position: relative;
+    border-bottom: 1px solid #ccc; }
+  .modal__wrapper .modal__close {
+    position: absolute;
+    top: calc(50% / 2);
+    right: 30px;
+    font-size: 1.414rem;
+    text-decoration: none;
+    cursor: pointer; }
+  .modal__wrapper .modal__footer {
+    border-top: 1px solid #ccc; }
+  .modal__wrapper .modal__header,
+  .modal__wrapper .modal__content,
+  .modal__wrapper .modal__footer {
+    padding: 10px 15px; }
 
 label {
   display: block;

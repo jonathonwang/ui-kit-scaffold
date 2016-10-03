@@ -80,3 +80,6 @@ $text-alignment: (
   margin-bottom: modular-scale(2);
   border-bottom: 1px solid lighten($secondary, .4);
 }
+.text--marginless {
+  margin: 0;
+}

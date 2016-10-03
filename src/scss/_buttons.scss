@@ -5,6 +5,8 @@
   padding: $button-padding-base-vertical $button-padding-base-horizontal;
   font-size: 1rem;
   text-align: center;
+  text-decoration: none;
+  cursor: pointer;
   background-color: #ddd;
   border: 0 solid transparent;
   border-radius: $border-radius;
@@ -25,6 +27,7 @@
 
 // Button Sizing
 @each $size, $styles in $button-sizes {
+  $i: index($button-sizes, $size);
   .btn--#{$size} {
     @if map-get($styles, padding) == null {
       padding: ($button-padding-base-vertical * $modular-scale-ratio) ($button-padding-base-horizontal * $modular-scale-ratio);
