@@ -29,23 +29,26 @@ p {
   font-size: 1 + $font-unit-value;
   color: lighten($paragraphs-color, .1);
 }
+small,
+.milli,
+.micro {
+  color: lighten($paragraphs-color, .1);
+}
 small {
   font-size: modular-scale(-1, em);
-  color: lighten($paragraphs-color, .1);
 }
 .milli {
   font-size: modular-scale(-1);
-  color: lighten($paragraphs-color, .1);
 }
 .micro {
   font-size: modular-scale(-2);
-  color: lighten($paragraphs-color, .1);
 }
 a {
+  text-decoration: none;
   cursor: pointer;
 }
 blockquote {
-  padding: 10px $grid-gutter-width;
+  padding: 10px ($grid-gutter-width / 2);
   margin: 0;
   font-size: 20px;
   font-style: italic;

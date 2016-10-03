@@ -7,7 +7,7 @@ import config from './gulp.config.json';
 
 // Copy Folders / Files
 gulp.Copy('copy', [
-  { src: `${config.paths.vendor.normalize}/**/*`, dest: `${config.paths.src.scss}/vendor/normalize` }
+  { src: `${config.paths.vendor.fontawesome}/**/*`, dest: `${config.paths.dist.fonts}` }
 ]);
 
 // Compile Sass
@@ -23,7 +23,7 @@ gulp.Eslint('eslint', `${config.paths.src.js}/**/*.js`, `${config.paths.src.js}/
 gulp.Scsslint('scsslint', `${config.paths.src.sass}/**/*.scss`, `${config.paths.src.sass}/vendor/**/*.scss`, '.scss-lint.yml');
 
 // Clean Dist Folder
-gulp.Clean('clean', [`${config.paths.dist.css}/**/*`, `${config.paths.dist.js}/**/*`, `${config.paths.src.scss}/vendor/*`, `${config.paths.dist.fonts}`]);
+gulp.Clean('clean', [`${config.paths.dist.css}/**/*`, `${config.paths.dist.js}/**/*`, `${config.paths.dist.fonts}/**/*`]);
 
 // Default Task
 gulp.Default(['copy', 'scsslint', 'scss', 'browserify']);

@@ -11,7 +11,8 @@
   border: 0 solid transparent;
   border-radius: $border-radius;
   &:focus {
-    //outline: none;
+    outline: none;
+    box-shadow: 0 0 9px 3px rgba(56, 121, 217, .5);
   }
   &:hover {
     background-color: darken(#eee, 10%);
@@ -20,6 +21,7 @@
 .btn {
   @extend %btn;
 }
+
 // Button Modifiers
 .btn--pill {
   border-radius: 200px;
@@ -27,7 +29,6 @@
 
 // Button Sizing Modifiers
 @each $size, $styles in $button-sizes {
-  $i: index($button-sizes, $size);
   .btn--#{$size} {
     @if map-get($styles, padding) == null {
       padding: modular-scale(-1) modular-scale(1);

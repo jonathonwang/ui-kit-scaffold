@@ -15,7 +15,7 @@
       "fonts": "./dist/fonts"
     },
     "vendor": {
-      "normalize": "./node_modules/normalize-scss/sass"
+      "fontawesome": "node_modules/font-awesome/fonts"
     }
   }
 }

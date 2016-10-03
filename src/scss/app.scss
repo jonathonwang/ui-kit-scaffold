@@ -1,6 +1,8 @@
 // ====================================
-// Vendor Imports
-@import 'vendor/normalize/normalize';
+// Vendor Imports ~ uses sass-module-importer
+// No Need to put all that node_module mumbo jumbo!
+@import 'normalize-scss';
+@import 'font-awesome';
 
 // ====================================
 // Variables & Mixins & Functions Imports
