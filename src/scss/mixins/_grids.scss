@@ -1,5 +1,5 @@
+// ====================================
 /// Grid system
-//
 // Generate semantic grid columns with these mixins.
 
 @mixin make-container($gutter: $grid-gutter-width) {
@@ -11,6 +11,7 @@
 }
 
 
+// ====================================
 // For each breakpoint, define the maximum width of the container in a media query
 @mixin make-container-max-widths($max-widths: $container-max-widths) {
   @each $breakpoint, $container-max-width in $max-widths {

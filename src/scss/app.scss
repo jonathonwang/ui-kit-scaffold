@@ -1,7 +1,10 @@
 @import 'vendor/normalize/normalize';
+//@import 'vendor/font-awesome/scss/font-awesome';
+
 @import 'variables';
-@import 'functions';
 @import 'mixins';
+@import 'functions';
+
 @import 'base';
 @import 'grid';
 @import 'typography';
