@@ -3040,7 +3040,8 @@ ul, ol {
   cursor: pointer;
   background-color: #ddd;
   border: 0 solid transparent;
-  border-radius: 3px; }
+  border-radius: 3px;
+  transition: .25s ease box-shadow; }
   .btn:focus {
     outline: none;
     box-shadow: 0 0 9px 3px rgba(56, 121, 217, 0.5); }
@@ -3114,19 +3115,19 @@ ul, ol {
 .dropdown__list {
   position: absolute;
   left: 0;
-  z-index: -10;
   overflow: visible;
   visibility: hidden;
   background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 3px;
   opacity: 0;
-  transition: .5s ease opacity;
-  transform: translate(0, 8px); }
+  transition: .5s ease all;
+  transform: translate(0, -8px); }
   .dropdown__list.dropdown__list--open {
     z-index: 10;
     visibility: visible;
-    opacity: 1; }
+    opacity: 1;
+    transform: translate(0, 8px); }
   .dropdown__list:before {
     position: absolute;
     top: -6px;
@@ -3162,6 +3163,53 @@ ul, ol {
     text-decoration: none; }
   .dropdown__item:hover {
     background-color: #e6e6e6; }
+
+[data-tooltip],
+[data-tooltip-top] {
+  position: relative; }
+  [data-tooltip]:before,
+  [data-tooltip-top]:before {
+    position: absolute;
+    top: -90%;
+    left: 0%;
+    display: block;
+    width: 100%;
+    padding: 0.50015rem 0.70721rem;
+    margin: 0 auto;
+    font-size: 0.70721rem;
+    cursor: default;
+    visibility: hidden;
+    content: attr(data-tooltip);
+    background-color: #bbb;
+    border-radius: 3px;
+    opacity: 0;
+    transition: .5s ease all;
+    transform: translate(0, 8px); }
+  [data-tooltip]:after,
+  [data-tooltip-top]:after {
+    position: absolute;
+    top: -20%;
+    left: calc(50% - (15px / 2));
+    z-index: 10;
+    width: 0;
+    height: 0;
+    content: ' ';
+    border-color: #bbb transparent transparent;
+    border-style: solid;
+    border-width: 6px 7.5px 0;
+    opacity: 0;
+    transition: .5s ease all;
+    transform: translate(0, 8px); }
+  [data-tooltip]:hover:before,
+  [data-tooltip-top]:hover:before {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(0, 0); }
+  [data-tooltip]:hover:after,
+  [data-tooltip-top]:hover:after {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(0, 0); }
 
 .modal__outer {
   position: fixed;

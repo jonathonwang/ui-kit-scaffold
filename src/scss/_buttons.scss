@@ -10,6 +10,7 @@
   background-color: #ddd;
   border: 0 solid transparent;
   border-radius: $border-radius;
+  transition: .25s ease box-shadow;
   &:focus {
     outline: none;
     box-shadow: 0 0 9px 3px rgba(56, 121, 217, .5);

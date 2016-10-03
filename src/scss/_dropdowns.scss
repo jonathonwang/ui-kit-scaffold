@@ -5,19 +5,20 @@
   @extend .list--unstyled;
   position: absolute;
   left: 0;
-  z-index: -10;
   overflow: visible;
   visibility: hidden;
   background-color: $white;
   border: 1px solid #ccc;
   border-radius: $border-radius;
   opacity: 0;
-  transition: .5s ease opacity;
-  transform: translate(0, 8px);
+  transition: .5s ease all;
+  transform: translate(0, -8px);
+
   &.dropdown__list--open {
     z-index: 10;
     visibility: visible;
     opacity: 1;
+    transform: translate(0, 8px);
   }
   &:before {
     position: absolute;
