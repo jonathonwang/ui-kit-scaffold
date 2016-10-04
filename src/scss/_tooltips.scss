@@ -12,6 +12,7 @@ $tooltips: (
 [data-tooltip],
 [data-tooltip-top] {
   position: relative;
+  z-index: 0;
 
   &:before {
     position: absolute;
