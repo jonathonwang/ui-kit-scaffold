@@ -30,11 +30,13 @@ p {
   color: lighten($paragraphs-color, .1);
 }
 small,
+.small,
 .milli,
 .micro {
   color: lighten($paragraphs-color, .1);
 }
-small {
+small,
+.small {
   font-size: modular-scale(-1, em);
 }
 .milli {

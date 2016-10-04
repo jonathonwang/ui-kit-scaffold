@@ -9,7 +9,9 @@ require('./modals');
 'use strict';
 
 (function () {
-  var dropdownButtons = document.querySelectorAll('.dropdown button');
+  var dropdowns = document.querySelectorAll('.dropdown');
+  var dropdownButtons = document.querySelectorAll('.dropdown .dropdown__btn');
+  var dropdownListItems = document.querySelectorAll('.dropdown__item a');
   var _iteratorNormalCompletion = true;
   var _didIteratorError = false;
   var _iteratorError = undefined;
@@ -19,8 +21,40 @@ require('./modals');
       var dropdown = _step.value;
 
       dropdown.addEventListener('click', function (event) {
+        // Make sure to close other open dropdowns excluding the one clicked on
         var dropdownWrapper = event.target.parentElement;
         var dropdownList = dropdownWrapper.querySelector('.dropdown__list');
+        var _iteratorNormalCompletion4 = true;
+        var _didIteratorError4 = false;
+        var _iteratorError4 = undefined;
+
+        try {
+          for (var _iterator4 = dropdowns[Symbol.iterator](), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
+            var otherDropdown = _step4.value;
+
+            if (otherDropdown !== dropdownWrapper) {
+              var otherDropdownList = otherDropdown.querySelector('.dropdown__list');
+              if (otherDropdownList.classList.contains('dropdown__list--open')) {
+                otherDropdownList.classList.remove('dropdown__list--open');
+              }
+            }
+          }
+          // Toggle dropdown__list--open
+        } catch (err) {
+          _didIteratorError4 = true;
+          _iteratorError4 = err;
+        } finally {
+          try {
+            if (!_iteratorNormalCompletion4 && _iterator4.return) {
+              _iterator4.return();
+            }
+          } finally {
+            if (_didIteratorError4) {
+              throw _iteratorError4;
+            }
+          }
+        }
+
         if (dropdownList.classList.contains('dropdown__list--open')) {
           dropdownList.classList.remove('dropdown__list--open');
         } else {
@@ -45,7 +79,6 @@ require('./modals');
     }
   }
 
-  var dropdownListItems = document.querySelectorAll('.dropdown__item a');
   var _iteratorNormalCompletion2 = true;
   var _didIteratorError2 = false;
   var _iteratorError2 = undefined;
@@ -74,7 +107,6 @@ require('./modals');
     }
   }
 
-  var dropdowns = document.querySelectorAll('.dropdown');
   document.addEventListener('click', function (event) {
     var _iteratorNormalCompletion3 = true;
     var _didIteratorError3 = false;
