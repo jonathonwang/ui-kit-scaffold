@@ -39,7 +39,7 @@ ul, ol { line-height: 1.6; }
     border-bottom-right-radius: 3px;
   }
 
-  .list--arrows &::after {
+  .list--arrows &:after {
     position: absolute;
     top: 50%;
     right: 15px;
