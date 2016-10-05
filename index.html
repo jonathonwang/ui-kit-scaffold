@@ -7,10 +7,34 @@
   <title>Document</title>
   <link rel="stylesheet" href="dist/css/app.css">
 </head>
-<body>
+<body style="padding-top: 47.188px">
+  <br>
+
+  <div class="navbar navbar--fixed">
+    <div class="container">
+      <div class="navbar__brand">Test Brand</div>
+      <button class="navbar__toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div class="navbar__nav">
+      <ul class="navbar__list">
+        <li><a href="#">List Item</a></li>
+        <li><a href="#">List Item</a></li>
+        <li><a href="#">List Item</a></li>
+        <li><a href="#">List Item</a></li>
+        <li><a href="#">List Item</a></li>
+      </ul>
+    </div>
+  </div>
 
   <div class="container">
     <!-- Open Container -->
+
+    <!-- Typography Section -->
     <section id="typography">
       <div class="row">
         <div class="col-xs-12">
@@ -28,11 +52,13 @@
         </div>
       </div>
     </section>
+    <!-- /Typography Section -->
 
     <br>
     <br>
     <br>
 
+    <!-- Grid Section -->
     <section id="grid">
       <div class="row">
         <div class="col-xs-12">
@@ -66,11 +92,13 @@
         <div class="col-xs-11 text--center" style="background-color: #eee; padding:10px; margin: 10px 0; border: 1px solid #ddd;">.col-xs-11</div>
       </div>
     </section>
+    <!-- /Grid Section -->
 
     <br>
     <br>
     <br>
 
+    <!-- List Section -->
     <section id="lists">
       <div class="row">
         <div class="col-xs-12">
@@ -116,11 +144,13 @@
         </div>
       </div>
     </section>
+    <!-- /List Section -->
 
     <br>
     <br>
     <br>
 
+    <!-- Table Section -->
     <section id="tables">
       <div class="row">
         <div class="col-xs-12">
@@ -128,7 +158,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-xs-4">
+        <div class="col-xs-12">
           <table class="table table--bordered table--padded">
             <thead>
               <tr>
@@ -148,7 +178,7 @@
             </tbody>
           </table>
         </div>
-        <div class="col-xs-4">
+        <div class="col-xs-12">
           <table class="table table--striped table--padded">
             <thead>
               <tr>
@@ -168,7 +198,7 @@
             </tbody>
           </table>
         </div>
-        <div class="col-xs-4">
+        <div class="col-xs-12">
           <table class="table table--underlined table--padded">
             <thead>
               <tr>
@@ -190,7 +220,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-xs-4">
+        <div class="col-xs-12">
           <table class="table table--hover table--padded">
             <thead>
               <tr>
@@ -212,11 +242,13 @@
         </div>
       </div>
     </section>
+    <!-- /Table Section -->
 
     <br>
     <br>
     <br>
 
+    <!-- Button Section -->
     <section id="buttons">
       <div class="row">
         <div class="col-xs-12">
@@ -248,11 +280,13 @@
         </div>
       </div>
     </section>
+    <!-- /Button Section -->
 
     <br>
     <br>
     <br>
 
+    <!-- Form Section -->
     <section id="forms">
       <div class="row">
         <div class="col-xs-12">
@@ -298,17 +332,14 @@
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-xs-12">
-
-        </div>
-      </div>
     </section>
+    <!-- /Form Section -->
 
     <br>
     <br>
     <br>
 
+    <!-- Dropdown Section -->
     <section id="dropdowns">
       <div class="row">
         <div class="col-xs-12">
@@ -376,11 +407,13 @@
         </div>
       </div>
     </section>
+    <!-- /Dropdown Section -->
 
     <br>
     <br>
     <br>
 
+    <!-- Modal Section -->
     <section id="modals">
       <div class="row">
         <div class="col-xs-12">
@@ -389,35 +422,78 @@
       </div>
       <div class="row">
         <div class="col-xs-12">
-          <a href="#modal-1" data-modal-open class="btn btn--primary btn--outline btn--pill">Show Modal</a>
+          <a href="#modal-xs" data-modal-open class="btn btn--primary btn--outline btn--pill">Modal XS</a>
+          <a href="#modal-md" data-modal-open class="btn btn--primary btn--outline btn--pill">Modal MD</a>
+          <a href="#modal-lg" data-modal-open class="btn btn--primary btn--outline btn--pill">Modal LG</a>
+        </div>
+      </div>
+
+
+      <div id="modal-xs" class="modal__overlay">
+        <div class="modal modal--xs">
+          <div class="modal__header">
+            <h5 class="text--marginless">Hello World</h5>
+            <a href="#" data-modal-close class="modal__close">&times;</a>
+          </div>
+          <div class="modal__content">
+            <p>
+              Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec id elit non mi porta gravida at eget metus. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Etiam porta sem malesuada magna mollis euismod.
+            </p>
+            <p>
+              Nullam id dolor id nibh ultricies vehicula ut id elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Curabitur blandit tempus porttitor. Donec ullamcorper nulla non metus auctor fringilla. Praesent commodo     cursus magna, vel scelerisque nisl consectetur et. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+            </p>
+          </div>
+          <div class="modal__footer">
+            <button data-modal-close class="btn btn--primary btn--pill btn--outline">Close</button>
+          </div>
+        </div>
+      </div>
+      <div id="modal-md" class="modal__overlay">
+        <div class="modal modal--md">
+          <div class="modal__header">
+            <h5 class="text--marginless">Hello World</h5>
+            <a href="#" data-modal-close class="modal__close">&times;</a>
+          </div>
+          <div class="modal__content">
+            <p>
+              Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec id elit non mi porta gravida at eget metus. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Etiam porta sem malesuada magna mollis euismod.
+            </p>
+            <p>
+              Nullam id dolor id nibh ultricies vehicula ut id elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Curabitur blandit tempus porttitor. Donec ullamcorper nulla non metus auctor fringilla. Praesent commodo     cursus magna, vel scelerisque nisl consectetur et. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+            </p>
+          </div>
+          <div class="modal__footer">
+            <button data-modal-close class="btn btn--primary btn--pill btn--outline">Close</button>
+          </div>
+        </div>
+      </div>
+      <div id="modal-lg" class="modal__overlay">
+        <div class="modal modal--lg">
+          <div class="modal__header">
+            <h5 class="text--marginless">Hello World</h5>
+            <a href="#" data-modal-close class="modal__close">&times;</a>
+          </div>
+          <div class="modal__content">
+            <p>
+              Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec id elit non mi porta gravida at eget metus. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Etiam porta sem malesuada magna mollis euismod.
+            </p>
+            <p>
+              Nullam id dolor id nibh ultricies vehicula ut id elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Curabitur blandit tempus porttitor. Donec ullamcorper nulla non metus auctor fringilla. Praesent commodo     cursus magna, vel scelerisque nisl consectetur et. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+            </p>
+          </div>
+          <div class="modal__footer">
+            <button data-modal-close class="btn btn--primary btn--pill btn--outline">Close</button>
+          </div>
         </div>
       </div>
     </section>
-
-    <div id="modal-1" class="modal__outer">
-      <div class="modal__wrapper">
-        <div class="modal__header">
-          <h5 class="text--marginless">Hello World</h5>
-          <a href="#" data-modal-close class="modal__close">&times;</a>
-        </div>
-        <div class="modal__content">
-          <p>
-            Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec id elit non mi porta gravida at eget metus. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Etiam porta sem malesuada magna mollis euismod.
-          </p>
-          <p>
-            Nullam id dolor id nibh ultricies vehicula ut id elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Curabitur blandit tempus porttitor. Donec ullamcorper nulla non metus auctor fringilla. Praesent commodo     cursus magna, vel scelerisque nisl consectetur et. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-          </p>
-        </div>
-        <div class="modal__footer">
-          <button data-modal-close class="btn btn--primary btn--pill btn--outline">Close</button>
-        </div>
-      </div>
-    </div>
+    <!-- /Modal Section -->
 
     <br>
     <br>
     <br>
 
+    <!-- Tooltip Section -->
     <section id="tooltips">
       <div class="row">
         <div class="col-xs-12">
@@ -432,6 +508,52 @@
         </div>
       </div>
     </section>
+    <!-- /Tooltip Section -->
+
+    <br>
+    <br>
+    <br>
+
+    <!-- Alert Section -->
+    <section id="alerts">
+      <div class="row">
+        <div class="col-xs-12">
+          <h1 class="h4 text--header">Alerts</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="alert--danger">
+            <p class="alert__message">
+              <strong>Alert Message:</strong> Maecenas sed diam eget risus varius blandit sit amet non magna. Curabitur blandit tempus porttitor. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+            </p>
+            <a href="#" class="alert__close">&times;</a>
+          </div>
+          <br>
+          <div class="alert--warning">
+            <p class="alert__message">
+              <strong>Alert Message:</strong> Maecenas sed diam eget risus varius blandit sit amet non magna. Curabitur blandit tempus porttitor. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+            </p>
+            <a href="#" class="alert__close">&times;</a>
+          </div>
+          <br>
+          <div class="alert--info">
+            <p class="alert__message">
+              <strong>Alert Message:</strong> Maecenas sed diam eget risus varius blandit sit amet non magna. Curabitur blandit tempus porttitor. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+            </p>
+            <a href="#" class="alert__close">&times;</a>
+          </div>
+          <br>
+          <div class="alert--success">
+            <p class="alert__message">
+              <strong>Alert Message:</strong> Maecenas sed diam eget risus varius blandit sit amet non magna. Curabitur blandit tempus porttitor. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+            </p>
+            <a href="#" class="alert__close">&times;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /Alert Section -->
 
     <!-- Close Container -->
   </div>

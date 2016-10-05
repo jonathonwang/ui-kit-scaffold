@@ -1,0 +1,75 @@
+// ====================================
+// Alert Styles
+
+%alert {
+  position: relative;
+  width: 100%;
+  padding: modular-scale(1);
+  overflow: hidden;
+  border-radius: $border-radius;
+  transition: .5s ease all;
+  animation-name: alert--enter;
+  animation-duration: .5s;
+}
+
+%alert--hidden {
+  height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  visibility: hidden;
+  opacity: 0;
+}
+
+%alert__message {
+  padding-right: modular-scale(2);
+  margin-bottom: 0;
+  font-size: modular-scale(0);
+}
+
+%alert__close {
+  position: absolute;
+  top: modular-scale(1);
+  right: modular-scale(1);
+  display: inline-block;
+  font-size: modular-scale(1);
+  font-weight: map-get($font-weights, bold);
+  cursor: pointer;
+}
+
+@each $alert, $styles in $alert-styles {
+  .alert--#{$alert} {
+    @extend %alert;
+    background-color: map-get($styles, background-color);
+    border: 1px solid lighten(map-get($styles, color), 20%);
+
+    &.alert--hidden {
+      @extend %alert--hidden;
+    }
+    .alert__message {
+      @extend %alert__message;
+      color: map-get($styles, color);
+    }
+    .alert__close {
+      @extend %alert__close;
+      color: map-get($styles, color);
+      &:hover {
+        color: darken(map-get($styles, color), 20%);
+      }
+    }
+  }
+}
+
+@keyframes alert--enter {
+  0% {
+    height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    opacity: 0;
+  },
+  100% {
+    height: auto;
+    padding-top: auto;
+    padding-bottom: auto;
+    opacity: 1;
+  }
+}

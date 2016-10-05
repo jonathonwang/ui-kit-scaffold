@@ -1,11 +1,52 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 'use strict';
 
+(function () {
+  var alertCloseButtons = document.querySelectorAll('.alert__close');
+  var _iteratorNormalCompletion = true;
+  var _didIteratorError = false;
+  var _iteratorError = undefined;
+
+  try {
+    for (var _iterator = alertCloseButtons[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+      var button = _step.value;
+
+      button.addEventListener('click', function (event) {
+        event.preventDefault();
+        var alertWrapper = event.target.parentElement;
+        if (!alertWrapper.classList.contains('alert--hidden')) {
+          alertWrapper.classList.add('alert--hidden');
+        }
+      });
+    }
+  } catch (err) {
+    _didIteratorError = true;
+    _iteratorError = err;
+  } finally {
+    try {
+      if (!_iteratorNormalCompletion && _iterator.return) {
+        _iterator.return();
+      }
+    } finally {
+      if (_didIteratorError) {
+        throw _iteratorError;
+      }
+    }
+  }
+})();
+
+},{}],2:[function(require,module,exports){
+'use strict';
+
 require('./dropdowns');
 
 require('./modals');
 
-},{"./dropdowns":2,"./modals":3}],2:[function(require,module,exports){
+require('./alerts');
+
+require('./navbar');
+
+},{"./alerts":1,"./dropdowns":3,"./modals":4,"./navbar":5}],3:[function(require,module,exports){
 'use strict';
 
 (function () {
@@ -138,7 +179,7 @@ require('./modals');
   });
 })();
 
-},{}],3:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 'use strict';
 
 (function () {
@@ -150,7 +191,7 @@ require('./modals');
     }
   };
   var hideModal = function hideModal() {
-    var modals = document.querySelectorAll('.modal__outer');
+    var modals = document.querySelectorAll('.modal__overlay');
     var _iteratorNormalCompletion = true;
     var _didIteratorError = false;
     var _iteratorError = undefined;
@@ -236,7 +277,7 @@ require('./modals');
     }
   }
 
-  var modalOuters = document.querySelectorAll('.modal__outer');
+  var modalOuters = document.querySelectorAll('.modal__overlay');
   var _iteratorNormalCompletion4 = true;
   var _didIteratorError4 = false;
   var _iteratorError4 = undefined;
@@ -273,6 +314,27 @@ require('./modals');
   });
 })();
 
-},{}]},{},[1]);
+},{}],5:[function(require,module,exports){
+'use strict';
+
+(function () {
+  var navbarToggle = document.querySelector('.navbar__toggle');
+  var navbarNav = document.querySelector('.navbar__nav');
+  navbarToggle.addEventListener('click', function (event) {
+    if (navbarToggle.classList.contains('navbar__toggle--open')) {
+      navbarToggle.classList.remove('navbar__toggle--open');
+    } else {
+      navbarToggle.classList.add('navbar__toggle--open');
+    }
+    if (navbarNav.classList.contains('navbar__nav--open')) {
+      navbarNav.classList.remove('navbar__nav--open');
+    } else {
+      navbarNav.classList.add('navbar__nav--open');
+    }
+    event.preventDefault();
+  });
+})();
+
+},{}]},{},[2]);
 
 //# sourceMappingURL=app.js.map

@@ -1,0 +1,20 @@
+// ====================================
+// Alert Styles
+$alert-styles: (
+  danger: (
+    background-color: lighten(#e53935, 10%),
+    color: darken(#e53935, 20%)
+  ),
+  warning: (
+    background-color: lighten(#f9a825, 10%),
+    color: darken(#f9a825, 20%)
+  ),
+  info: (
+    background-color: lighten(#2196f3, 10%),
+    color: darken(#2196f3, 20%)
+  ),
+  success: (
+    background-color: lighten(#43a047, 10%),
+    color: darken(#43a047, 20%)
+  )
+);

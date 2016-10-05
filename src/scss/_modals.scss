@@ -1,8 +1,25 @@
-.modal__outer {
+// ====================================
+// Modal Styles
+%modal {
+  z-index: 50;
+  @if map-get(map-get($modal-styles, sizes), md) != null {
+    max-width: map-get(map-get($modal-styles, sizes), md); // defaults to md
+  } @else {
+    max-width: 700px;
+  }
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: map-get($modal-styles, background-color);
+  border-radius: $border-radius;
+  transition: .5s ease all;
+  transform: translate(0, -100px);
+}
+
+.modal__overlay {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 50;
+  z-index: -1;
   width: 100%;
   height: 100%;
   overflow-y: scroll;
@@ -11,46 +28,52 @@
   transition: .5s ease all;
 
   &.modal--open {
+    z-index: 50;
     visibility: visible;
-    background-color: rgba(0,0,0,.5);
+    background-color: map-get($modal-styles, overlay-background-color);
     opacity: 1;
   }
 }
 
 .modal--open {
-  .modal__wrapper {
+  .modal {
     transform: translate(0, 50px);
   }
 }
 
-.modal__wrapper {
-  z-index: 50;
-  max-width: 800px;
-  margin: 0 auto;
-  overflow: hidden;
-  background-color: #fff;
-  border-radius: $border-radius;
-  transition: .5s ease all;
-  transform: translate(0, -100px);
+.modal {
+  @extend %modal;
+  @if map-get($modal-styles, sizes) != null {
+    @each $size, $width in map-get($modal-styles, sizes) {
+      &.modal--#{$size} {
+        max-width: $width;
+      }
+    }
+  }
 
   .modal__header {
     position: relative;
-    border-bottom: 1px solid #ccc;
+    border-bottom: map-get($modal-styles, border-width) solid map-get($modal-styles, border-color);
   }
   .modal__close {
     position: absolute;
-    top: calc(50% / 2);
-    right: 30px;
+    top: 25%;
+    right: ($grid-gutter-width / 2);
     font-size: modular-scale(1);
     text-decoration: none;
     cursor: pointer;
+    @if map-get($modal-styles, border-color) != null {
+      color: map-get($modal-styles, border-color);
+    } @else {
+      color: $primary;
+    }
   }
   .modal__footer {
-    border-top: 1px solid #ccc;
+    border-top: map-get($modal-styles, border-width) solid map-get($modal-styles, border-color);
   }
   .modal__header,
   .modal__content,
   .modal__footer {
-    padding: 10px ($grid-gutter-width / 2);
+    padding: ($grid-gutter-width / 3) ($grid-gutter-width / 2);
   }
 }

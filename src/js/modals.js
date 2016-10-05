@@ -7,7 +7,7 @@
     }
   };
   const hideModal = () => {
-    const modals = document.querySelectorAll('.modal__outer');
+    const modals = document.querySelectorAll('.modal__overlay');
     for (const modal of modals) {
       if (modal.classList.contains('modal--open')) {
         modal.classList.remove('modal--open');
@@ -28,7 +28,7 @@
       event.preventDefault();
     });
   }
-  const modalOuters = document.querySelectorAll('.modal__outer');
+  const modalOuters = document.querySelectorAll('.modal__overlay');
   for (const modalOuter of modalOuters) {
     modalOuter.addEventListener('click', (event) => {
       if (event.target.classList.contains('modal--open')) {

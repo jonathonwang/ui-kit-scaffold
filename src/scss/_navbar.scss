@@ -1,0 +1,162 @@
+%navbar-vertical-padding {
+  padding-top: modular-scale(-1);
+  padding-bottom: modular-scale(-1);
+}
+
+.navbar {
+  @include clearfix();
+  background-color: #3f51b5;
+  &.navbar--fixed {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 110;
+  }
+  .container,
+  .container--fluid {
+    position: relative;
+  }
+}
+
+// Navbar Brand Logo Styling
+.navbar__brand {
+  @include make-col-span(4);
+  @extend %navbar-vertical-padding;
+  float: left;
+  font-size: modular-scale(1);
+  color: $white;
+  &:hover {
+    cursor: pointer;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+// Navbar Toggle Styling
+.navbar__toggle {
+  @extend .pull-right;
+  @extend %navbar-vertical-padding;
+  position: absolute;
+  right: ($grid-gutter-width / 2);
+  z-index: 100;
+  display: block;
+  width: 40px;
+  height: 100%;
+  padding-right: 10px;
+  padding-left: 10px;
+  cursor: pointer;
+  background-color: transparent;
+  border: 0 solid transparent;
+  transition: .5s ease all;
+  span {
+    position: absolute;
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: $white;
+    border-radius: 100px;
+    transition: .5s ease all;
+  }
+  span:nth-child(1) {
+    top: 18px;
+  }
+  span:nth-child(2) {
+    top: 23px;
+  }
+  span:nth-child(3) {
+    top: 23px;
+  }
+  span:nth-child(4) {
+    top: 28px;
+  }
+  &.navbar__toggle--open {
+    span:nth-child(1) {
+      top: 23px;
+      opacity: 0;
+    }
+    span:nth-child(2) {
+      transition-delay: .5s;
+      transform: rotate(-45deg);
+      transform-origin: 50%;
+    }
+    span:nth-child(3) {
+      transition-delay: .5s;
+      transform: rotate(45deg);
+      transform-origin: 50%;
+    }
+    span:nth-child(4) {
+      top: 23px;
+      opacity: 0;
+    }
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+// Navbar Nav List Styling
+.navbar__nav {
+  @extend .container--fluid;
+  z-index: -1;
+  visibility: hidden;
+  transition: .5s ease all;
+  &:before {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow-y: scroll;
+    visibility: hidden;
+    content: ' ';
+    background-color: rgba(50, 50, 50, .95);
+    opacity: 0;
+    transition: .5s ease all;
+  }
+  &.navbar__nav--open {
+    z-index: 95;
+    visibility: visible;
+    opacity: 1;
+    &:before {
+      z-index: 90;
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+.navbar__nav--open {
+  .navbar__list {
+    z-index: 95;
+    visibility: visible;
+    opacity: 1;
+  }
+}
+.navbar__list {
+  @extend .list--unstyled;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  //overflow-y: scroll;
+  visibility: hidden;
+  opacity: 0;
+  a {
+    @extend .text--center;
+    display: block;
+    padding: modular-scale(2);
+    font-size: modular-scale(2);
+    color: #3f51b5;
+    &:hover {
+      color: $white;
+      background-color: #3f51b5;
+    }
+  }
+}
+
+// Nav List Item Styling
