@@ -3164,6 +3164,7 @@ textarea {
 .modal {
   z-index: 50;
   max-width: 700px;
+  border: 1px solid #333;
   margin: 0 auto;
   overflow: hidden;
   background-color: #fff;
@@ -3185,11 +3186,11 @@ textarea {
   .modal__overlay.modal--open {
     z-index: 50;
     visibility: visible;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
     opacity: 1; }
 
 .modal--open .modal {
-  transform: translate(0, 50px); }
+  transform: translate(0, 85px); }
 
 .modal.modal--xs {
   max-width: 400px; }
@@ -3518,8 +3519,8 @@ pre {
     position: relative; }
 
 .navbar__brand {
-  width: 33.33333%;
   float: left;
+  width: 100%;
   font-size: 1.414rem;
   color: #fff; }
   .navbar__brand:hover {
@@ -3527,6 +3528,8 @@ pre {
   .navbar__brand img {
     max-width: 100%;
     height: auto; }
+  .navbar__brand a {
+    color: #fff; }
 
 .navbar__toggle {
   position: absolute;
@@ -3540,7 +3543,7 @@ pre {
   cursor: pointer;
   background-color: transparent;
   border: 0 solid transparent;
-  transition: .5s ease all; }
+  transition: .3s ease all; }
   .navbar__toggle span {
     position: absolute;
     display: block;
@@ -3548,31 +3551,44 @@ pre {
     height: 2px;
     background-color: #fff;
     border-radius: 100px;
-    transition: .5s ease all; }
+    transition: .3s ease all; }
   .navbar__toggle span:nth-child(1) {
-    top: 18px; }
+    top: 17px; }
   .navbar__toggle span:nth-child(2) {
     top: 23px; }
   .navbar__toggle span:nth-child(3) {
     top: 23px; }
   .navbar__toggle span:nth-child(4) {
-    top: 28px; }
-  .navbar__toggle.navbar__toggle--open span:nth-child(1) {
+    top: 29px; }
+  .navbar__toggle:hover span:nth-child(1) {
     top: 23px;
-    opacity: 0; }
-  .navbar__toggle.navbar__toggle--open span:nth-child(2) {
-    transition-delay: .5s;
-    transform: rotate(-45deg);
-    transform-origin: 50%; }
-  .navbar__toggle.navbar__toggle--open span:nth-child(3) {
-    transition-delay: .5s;
-    transform: rotate(45deg);
-    transform-origin: 50%; }
-  .navbar__toggle.navbar__toggle--open span:nth-child(4) {
+    transition: .3s ease all;
+    transform: rotate(-90deg); }
+  .navbar__toggle:hover span:nth-child(4) {
     top: 23px;
-    opacity: 0; }
-  .navbar__toggle:focus {
-    outline: none; }
+    transition: .3s ease all;
+    transform: rotate(90deg); }
+
+.navbar__toggle--open span:nth-child(1) {
+  top: 23px;
+  opacity: 0; }
+
+.navbar__toggle--open span:nth-child(2) {
+  transition-delay: .3s;
+  transform: rotate(-45deg);
+  transform-origin: 50%; }
+
+.navbar__toggle--open span:nth-child(3) {
+  transition-delay: .3s;
+  transform: rotate(45deg);
+  transform-origin: 50%; }
+
+.navbar__toggle--open span:nth-child(4) {
+  top: 23px;
+  opacity: 0; }
+
+:focus {
+  outline: none; }
 
 .navbar__nav {
   z-index: -1;
@@ -3590,19 +3606,21 @@ pre {
     background-color: rgba(50, 50, 50, 0.95);
     opacity: 0;
     transition: .5s ease all; }
-  .navbar__nav.navbar__nav--open {
-    z-index: 95;
-    visibility: visible;
-    opacity: 1; }
-    .navbar__nav.navbar__nav--open:before {
-      z-index: 90;
-      visibility: visible;
-      opacity: 1; }
 
-.navbar__nav--open .navbar__list {
+.navbar__nav--open {
   z-index: 95;
   visibility: visible;
   opacity: 1; }
+  .navbar__nav--open:before {
+    z-index: 90;
+    visibility: visible;
+    opacity: 1; }
+  .navbar__nav--open .navbar__list a {
+    transform: scale(1); }
+  .navbar__nav--open .navbar__list {
+    z-index: 95;
+    visibility: visible;
+    opacity: 1; }
 
 .navbar__list {
   position: absolute;
@@ -3610,15 +3628,23 @@ pre {
   right: 0;
   bottom: 0;
   left: 0;
+  display: block;
   width: 100%;
-  height: 100%;
+  height: calc(100vh - 50px);
+  overflow: scroll;
   visibility: hidden;
   opacity: 0; }
   .navbar__list a {
     display: block;
-    padding: 1.9994rem;
-    font-size: 1.9994rem;
-    color: #3f51b5; }
+    float: left;
+    width: 50%;
+    padding: 1.414rem;
+    font-size: 1.414rem;
+    font-weight: 700;
+    color: #3f51b5;
+    border: 1px solid #3f51b5;
+    transition: .5s ease all;
+    transform: scale(0); }
     .navbar__list a:hover {
       color: #fff;
       background-color: #3f51b5; }

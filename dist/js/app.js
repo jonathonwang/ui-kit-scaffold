@@ -3,6 +3,13 @@
 
 (function () {
   var alertCloseButtons = document.querySelectorAll('.alert__close');
+  var closeAlert = function closeAlert(event) {
+    var alertWrapper = event.target.parentElement;
+    if (!alertWrapper.classList.contains('alert--hidden')) {
+      alertWrapper.classList.add('alert--hidden');
+    }
+    event.preventDefault();
+  };
   var _iteratorNormalCompletion = true;
   var _didIteratorError = false;
   var _iteratorError = undefined;
@@ -12,11 +19,7 @@
       var button = _step.value;
 
       button.addEventListener('click', function (event) {
-        event.preventDefault();
-        var alertWrapper = event.target.parentElement;
-        if (!alertWrapper.classList.contains('alert--hidden')) {
-          alertWrapper.classList.add('alert--hidden');
-        }
+        return closeAlert(event);
       });
     }
   } catch (err) {
@@ -183,13 +186,17 @@ require('./navbar');
 'use strict';
 
 (function () {
-  var modalButtons = document.querySelectorAll('[data-modal-open]');
+  var modalOpenButtons = document.querySelectorAll('[data-modal-open]');
+  var modalCloseButtons = document.querySelectorAll('[data-modal-close]');
+  var modalOuters = document.querySelectorAll('.modal__overlay');
+  // Show Modal Function
   var showModal = function showModal(modalId) {
     var modal = document.querySelector(modalId);
     if (!modal.classList.contains('modal--open')) {
       modal.classList.add('modal--open');
     }
   };
+  // Hide Modal Function
   var hideModal = function hideModal() {
     var modals = document.querySelectorAll('.modal__overlay');
     var _iteratorNormalCompletion = true;
@@ -219,12 +226,13 @@ require('./navbar');
       }
     }
   };
+  // Modal Open Button Listeners
   var _iteratorNormalCompletion2 = true;
   var _didIteratorError2 = false;
   var _iteratorError2 = undefined;
 
   try {
-    for (var _iterator2 = modalButtons[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+    for (var _iterator2 = modalOpenButtons[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
       var modalButton = _step2.value;
 
       modalButton.addEventListener('click', function (event) {
@@ -233,6 +241,7 @@ require('./navbar');
         event.preventDefault();
       });
     }
+    // Modal Close Button Listeners
   } catch (err) {
     _didIteratorError2 = true;
     _iteratorError2 = err;
@@ -248,7 +257,6 @@ require('./navbar');
     }
   }
 
-  var modalCloseButtons = document.querySelectorAll('[data-modal-close]');
   var _iteratorNormalCompletion3 = true;
   var _didIteratorError3 = false;
   var _iteratorError3 = undefined;
@@ -262,6 +270,7 @@ require('./navbar');
         event.preventDefault();
       });
     }
+    // Modal Close On Outside Click Listeners
   } catch (err) {
     _didIteratorError3 = true;
     _iteratorError3 = err;
@@ -277,7 +286,6 @@ require('./navbar');
     }
   }
 
-  var modalOuters = document.querySelectorAll('.modal__overlay');
   var _iteratorNormalCompletion4 = true;
   var _didIteratorError4 = false;
   var _iteratorError4 = undefined;
@@ -292,6 +300,7 @@ require('./navbar');
         }
       });
     }
+    // Modal Close on Escape key Listeners
   } catch (err) {
     _didIteratorError4 = true;
     _iteratorError4 = err;
@@ -320,7 +329,8 @@ require('./navbar');
 (function () {
   var navbarToggle = document.querySelector('.navbar__toggle');
   var navbarNav = document.querySelector('.navbar__nav');
-  navbarToggle.addEventListener('click', function (event) {
+  var navbarList = document.querySelectorAll('.navbar__list a');
+  var toggleNavOpen = function toggleNavOpen(event) {
     if (navbarToggle.classList.contains('navbar__toggle--open')) {
       navbarToggle.classList.remove('navbar__toggle--open');
     } else {
@@ -331,8 +341,37 @@ require('./navbar');
     } else {
       navbarNav.classList.add('navbar__nav--open');
     }
-    event.preventDefault();
+    event ? event.preventDefault() : '';
+  };
+  navbarToggle.addEventListener('click', function (event) {
+    return toggleNavOpen(event);
   });
+  var _iteratorNormalCompletion = true;
+  var _didIteratorError = false;
+  var _iteratorError = undefined;
+
+  try {
+    for (var _iterator = navbarList[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+      var navItem = _step.value;
+
+      navItem.addEventListener('click', function () {
+        return toggleNavOpen();
+      });
+    }
+  } catch (err) {
+    _didIteratorError = true;
+    _iteratorError = err;
+  } finally {
+    try {
+      if (!_iteratorNormalCompletion && _iterator.return) {
+        _iterator.return();
+      }
+    } finally {
+      if (_didIteratorError) {
+        throw _iteratorError;
+      }
+    }
+  }
 })();
 
 },{}]},{},[2]);

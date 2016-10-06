@@ -21,9 +21,9 @@
 
 // Navbar Brand Logo Styling
 .navbar__brand {
-  @include make-col-span(4);
   @extend %navbar-vertical-padding;
   float: left;
+  width: 100%;
   font-size: modular-scale(1);
   color: $white;
   &:hover {
@@ -32,6 +32,9 @@
   img {
     max-width: 100%;
     height: auto;
+  }
+  a {
+    color: $white;
   }
 }
 
@@ -50,7 +53,7 @@
   cursor: pointer;
   background-color: transparent;
   border: 0 solid transparent;
-  transition: .5s ease all;
+  transition: .3s ease all;
   span {
     position: absolute;
     display: block;
@@ -58,10 +61,10 @@
     height: 2px;
     background-color: $white;
     border-radius: 100px;
-    transition: .5s ease all;
+    transition: .3s ease all;
   }
   span:nth-child(1) {
-    top: 18px;
+    top: 17px;
   }
   span:nth-child(2) {
     top: 23px;
@@ -70,31 +73,45 @@
     top: 23px;
   }
   span:nth-child(4) {
-    top: 28px;
+    top: 29px;
   }
-  &.navbar__toggle--open {
+  &:hover {
     span:nth-child(1) {
       top: 23px;
-      opacity: 0;
-    }
-    span:nth-child(2) {
-      transition-delay: .5s;
-      transform: rotate(-45deg);
-      transform-origin: 50%;
-    }
-    span:nth-child(3) {
-      transition-delay: .5s;
-      transform: rotate(45deg);
-      transform-origin: 50%;
+      transition: .3s ease all;
+      //transition-delay: .3s;
+      transform: rotate(-90deg);
     }
     span:nth-child(4) {
       top: 23px;
-      opacity: 0;
+      transition: .3s ease all;
+      //transition-delay: .3s;
+      transform: rotate(90deg);
     }
   }
-  &:focus {
-    outline: none;
+}
+.navbar__toggle--open {
+  span:nth-child(1) {
+    top: 23px;
+    opacity: 0;
   }
+  span:nth-child(2) {
+    transition-delay: .3s;
+    transform: rotate(-45deg);
+    transform-origin: 50%;
+  }
+  span:nth-child(3) {
+    transition-delay: .3s;
+    transform: rotate(45deg);
+    transform-origin: 50%;
+  }
+  span:nth-child(4) {
+    top: 23px;
+    opacity: 0;
+  }
+}
+&:focus {
+  outline: none;
 }
 
 // Navbar Nav List Styling
@@ -116,18 +133,21 @@
     opacity: 0;
     transition: .5s ease all;
   }
-  &.navbar__nav--open {
-    z-index: 95;
-    visibility: visible;
-    opacity: 1;
-    &:before {
-      z-index: 90;
-      visibility: visible;
-      opacity: 1;
-    }
-  }
 }
 .navbar__nav--open {
+  z-index: 95;
+  visibility: visible;
+  opacity: 1;
+  &:before {
+    z-index: 90;
+    visibility: visible;
+    opacity: 1;
+  }
+  .navbar__list {
+    a {
+      transform: scale(1);
+    }
+  }
   .navbar__list {
     z-index: 95;
     visibility: visible;
@@ -141,17 +161,24 @@
   right: 0;
   bottom: 0;
   left: 0;
+  display: block;
   width: 100%;
-  height: 100%;
-  //overflow-y: scroll;
+  height: calc(100vh - 50px);
+  overflow: scroll;
   visibility: hidden;
   opacity: 0;
   a {
     @extend .text--center;
     display: block;
-    padding: modular-scale(2);
-    font-size: modular-scale(2);
+    float: left;
+    width: 50%;
+    padding: modular-scale(1);
+    font-size: modular-scale(1);
+    font-weight: map-get($font-weights, black);
     color: #3f51b5;
+    border: 1px solid #3f51b5;
+    transition: .5s ease all;
+    transform: scale(0);
     &:hover {
       color: $white;
       background-color: #3f51b5;
